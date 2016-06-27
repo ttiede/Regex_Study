@@ -15,6 +15,9 @@ O símbolo + é um outro atalho para definir a quantidade e agora já conhecemos
 ##### ``` [ \t\r\n\f]```  onde:
 
 O primeiro caractere é um espaço branco.
+Quantifiers como  ``` ?, +, * e {n}  ```.
+*  ```\s // significa whitespace e é um atalho para  [ \t\r\n\f] ```
+*  ``` \w  //significa word char e é uma atalho para  [A-Za-z0-9_] ```.
 * ``` \t  // é um tab.```
 * ``` \r  // é carriage return.```
 * ``` \n  // é newline.```
@@ -29,10 +32,17 @@ O primeiro caractere é um espaço branco.
 *  ```  \b // Existe a inversão do \b, **non-word-boundary**:\B` (B maiúsculo) .```
 *  ``` ^ //é uma âncora que selecione o início da string alvo.```
 *  ``` $ //é uma âncora que selecione o fim do alvo.```
+*  ```() // Declaramos um grupo com ().```
+Podemos ter grupos e subgrupos.
+Um grupo é retornado na hora de executar, são úteis para selecionar uma parte do match.
+Através do  ```?:```, dizemos que não queremos ver esse grupo na resposta
 
-Quantifiers como  ``` ?, +, * e {n}  ```.
-*  ```\s // significa whitespace e é um atalho para  [ \t\r\n\f] ```
-*  ``` \w  //significa word char e é uma atalho para  [A-Za-z0-9_] ```.
+
+Declaramos um grupo com parênteses ( ).
+Podemos ter grupos e subgrupos, por exemplo: (\d\d(\d\d)).
+Um grupo faz parte do retorno da regex (na hora de executar) e são úteis para selecionar uma parte do match.
+
+Através do ?: dizemos que não queremos ver esse grupo na resposta da regex
 
 Definir classe de qualquer caractere com o colchetes
 * Exemplo: a classe  ``` [a1-]  ``` define 3 caracteres: a,1e -
@@ -129,3 +139,81 @@ __Find__: ```Data: 02/09/1964 ou Data:02/09/1964.```
 __Find__: ```Leonardo criou a página meu-site.html  exercicio.html index.htmlx  https://cursos.alura.com.br/curso.html```
 
 **Regex pattern:**: ```.*\.html$```
+
+
+__Find__: ```21 Maio 1993```
+,
+```21 Maio de 1993```
+ e
+ ```21 de Maio de 1993```
+
+**Regex pattern:**: ```([0123]?\d)\s+(de\s+)?([A-Z][a-zç]{1,8})\s+(de\s+)?([12]\d{3})```
+
+```([0123]?\d)\s+(?:de\s+)?([A-Z][a-zç]{1,8})\s+(?:de\s+)?([12]\d{3})```
+
+
+__Find__: ```20 de maio de 2015```
+
+ Regex Engine para que não devolva o grupo formado pelo de e por um whitespace
+
+**Regex pattern:**:
+```
+ (?:de\s+)?
+ ```
+
+__Find__: ```111.111.111-11 //Inicio```
+
+__Dividindo em grupos__
+
+ **Regex pattern:**:
+ ```
+  \d{3}[-.]?\d{3}[.-]?\d{3}[.-]?(\d{2})
+  ```
+
+__Find__:```Z171PZ7AZ23PZ7819AZ78GZ1AZ99IZ34O```
+__Descubra a msg por grupos__
+
+**Regex pattern:**:
+   ```
+   Z\d{1,}[0-9]?([A-Z])
+
+   Z\d+(\w)
+   ```
+
+__Find__:```
+   super.mario@caelum.com.br //extrai super.mario
+
+   donkey.kong@alura.com.br extrai donkey.kong
+
+   bowser1@alura.com.br extrai bowser1
+   ```
+
+
+**Regex pattern:**:
+```
+   ([a-z.]{5,15})\d?@(?:caelum.com.br|alura.com.br)$
+```
+
+__Find__:```
+toad@kart...com
+wario@kart@nintendo.com
+yoshi@nintendo
+daisy@nintendo.b
+..@email.com
+```
+
+**Regex pattern:**:
+```
+  ^([\w-]\.?)+@([\w-]+\.)+([A-Za-z]{2,4})+$
+```
+__Find__:```
+Nico Steppat|14/05/1977|Rua Buarque de Macedo|50|22222-222|Rio de Janeiro
+
+Romulo Henrique|14/06/1993|Rua do Lins|120|12345-322|Rio de Janeiro
+
+Leonardo Cordeiro|01/01/1995|Rua de Campo Grande|01|00001-234|Rio de Janeiro
+```
+**Regex pattern:**:
+```
+([\w\s]+)\|(?:\d\d\/\d\d\/\d\d\d\d)\|([\w\s]+)\|(\d{1,4})\|(\d{5}-\d{3})\|(?:[\w\s]{10,})
+```
