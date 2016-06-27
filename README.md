@@ -202,10 +202,8 @@ daisy@nintendo.b
 ..@email.com
 ```
 
-**Regex pattern:**:
-```
-  ^([\w-]\.?)+@([\w-]+\.)+([A-Za-z]{2,4})+$
-```
+**Regex pattern:**:```^([\w-]\.?)+@([\w-]+\.)+([A-Za-z]{2,4})+$```
+
 __Find__:```
 Nico Steppat|14/05/1977|Rua Buarque de Macedo|50|22222-222|Rio de Janeiro
 
