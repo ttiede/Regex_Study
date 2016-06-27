@@ -25,7 +25,10 @@ O primeiro caractere é um espaço branco.
 *  ``` [a-z] // significa de a até z, sempre minúscula. ```
 *  ``` [A-Za-z] // significa A-Z ou a-z.  ```
 *  ``` [abc] // significa a, b ou c.  ```
-
+*  ``` \b //é uma âncora que seleciona um word boundary, isso é o início ou fim da palavra.```
+*  ```  \b // Existe a inversão do \b, **non-word-boundary**:\B` (B maiúsculo) .```
+*  ``` ^ //é uma âncora que selecione o início da string alvo.```
+*  ``` $ //é uma âncora que selecione o fim do alvo.```
 
 Quantifiers como  ``` ?, +, * e {n}  ```.
 *  ```\s // significa whitespace e é um atalho para  [ \t\r\n\f] ```
@@ -93,7 +96,7 @@ __Find__: ```5asd - asdasd - ASDASD - asd3 - a4asd```
 
 __Find__: ```11 de Abril de 1995```
 
-**Regex pattern:**:
+**Regex pattern:**
 ```
 [0123]?\d\s+de\s+[A-Z][a-zç]{1,8}\s+de\s+[12]\d{3}
 var DIA  = "[0123]?\\d";
@@ -101,3 +104,29 @@ var _DE_ = "\\s+de\\s+";
 var MES  = "[A-Za-z][a-zç]{1,8}";
 var ANO  = "[12]\\d{3}";
 ```
+__Find__: ```CPF 111.111.111-11 //Inicio da linha e final ```
+
+**Regex pattern:**:
+```
+^\d{3}\.\d{3}\.\d{3}\-\d{2}$
+```
+
+__Find__: ``` Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure```
+**Pegar a linha inciado com **Caused by:**
+
+**Regex pattern:**:
+```
+^Caused by:.*
+```
+
+__Find__: ```Data: 02/09/1964 ou Data:02/09/1964.```
+
+**Regex pattern:**:
+```
+^Data:[\s]?[0-9]{2}\/[0-9]{2}\/[1-9]{4}$
+```
+
+__Find__: ```Leonardo criou a página meu-site.html  exercicio.html index.htmlx  https://cursos.alura.com.br/curso.html```
+
+**Regex pattern:**:
+```.*\.html$```
