@@ -128,5 +128,4 @@ __Find__: ```Data: 02/09/1964 ou Data:02/09/1964.```
 
 __Find__: ```Leonardo criou a página meu-site.html  exercicio.html index.htmlx  https://cursos.alura.com.br/curso.html```
 
-**Regex pattern:**:
-```.*\.html$```
+**Regex pattern:**: ```.*\.html$```
