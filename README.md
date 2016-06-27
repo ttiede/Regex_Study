@@ -171,36 +171,23 @@ __Dividindo em grupos__
   ```
 
 __Find__:```Z171PZ7AZ23PZ7819AZ78GZ1AZ99IZ34O```
+
 __Descubra a msg por grupos__
 
 **Regex pattern:**:
    ```
    Z\d{1,}[0-9]?([A-Z])
-
    Z\d+(\w)
    ```
 
-__Find__:```
-   super.mario@caelum.com.br //extrai super.mario
-
+__Find__:``` super.mario@caelum.com.br //extrai super.mario
    donkey.kong@alura.com.br extrai donkey.kong
-
-   bowser1@alura.com.br extrai bowser1
-   ```
+   bowser1@alura.com.br extrai bowser1 ```
 
 
-**Regex pattern:**:
-```
-   ([a-z.]{5,15})\d?@(?:caelum.com.br|alura.com.br)$
-```
+**Regex pattern:**: ``` ([a-z.]{5,15})\d?@(?:caelum.com.br|alura.com.br)$ ```
 
-__Find__:```
-toad@kart...com
-wario@kart@nintendo.com
-yoshi@nintendo
-daisy@nintendo.b
-..@email.com
-```
+__Find__: ``` toad@kart...com wario@kart@nintendo.com yoshi@nintendo daisy@nintendo.br ..@email.com ```
 
 **Regex pattern:**:```^([\w-]\.?)+@([\w-]+\.)+([A-Za-z]{2,4})+$```
 
@@ -209,8 +196,8 @@ Nico Steppat|14/05/1977|Rua Buarque de Macedo|50|22222-222|Rio de Janeiro
 
 Romulo Henrique|14/06/1993|Rua do Lins|120|12345-322|Rio de Janeiro
 
-Leonardo Cordeiro|01/01/1995|Rua de Campo Grande|01|00001-234|Rio de Janeiro
-```
+Leonardo Cordeiro|01/01/1995|Rua de Campo Grande|01|00001-234|Rio de Janeiro```
+
 **Regex pattern:**:
 ```
 ([\w\s]+)\|(?:\d\d\/\d\d\/\d\d\d\d)\|([\w\s]+)\|(\d{1,4})\|(\d{5}-\d{3})\|(?:[\w\s]{10,})
