@@ -16,6 +16,17 @@ O símbolo + é um outro atalho para definir a quantidade e agora já conhecemos
 
 O primeiro caractere é um espaço branco.
 Quantifiers como  ``` ?, +, * e {n}  ```.
+
+
+A classe \d é equivalente à classe [0-9]
+
+A classe \s é equivalente à classe [ \t\n\x0B\f\r]
+
+A classe \w é equivalente à classe [a-zA-Z_0-9]
+
+A classe . reconhece todos os tipos de caracteres, exceto o \n.
+Exemplo:
+
 *  ```\s // significa whitespace e é um atalho para  [ \t\r\n\f] ```
 *  ``` \w  //significa word char e é uma atalho para  [A-Za-z0-9_] ```.
 * ``` \t  // é um tab.```
@@ -218,6 +229,23 @@ __Find__: ```<h2 class="text-lef">Expressões regulares </h2>```
 
 **Regex pattern:**:```<(h1|h2).+?>([\s\wçõ]+)</\1>>```
 
+
+
+####<(a)\s+href="(.+)"(?:>(.*)<\/\1>)  ####
+``` <(a)\s+href="(.+)"(?:>(.*)<\/\1>) ```
+
+* iniciado com <
+* opcional o grupo contendo o valor a :(a)
+* \s seguido de espaços em branco, \n \r ou \t
+* + sendo uma ou mais vezes
+* contenha href="
+*  bloco com  .  que reconhece todos os tipos de caracteres, exceto o \n.
+*  " fecha o href =""
+* ?: >	Grupo de captura que não é salvo para rechamada posterio terminando em >
+* (.*)  grupo de  nenhum ou N de .
+* < o valor após o grupo
+* \/ a barra com escape
+* \1 referencia ao  primeiro grupo no caso (a)
 
 ### JAVASCRIPT ###
 
