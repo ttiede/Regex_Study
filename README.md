@@ -527,7 +527,7 @@ __Descubra a msg por grupos__
 Regex pattern: `Z\d{1,}[0-9]?([A-Z])` , `Z\d+(\w)` e `[^Z\d]`
 
 
-__Find: `super.mario@caelum.com.br`  //extrai super.mario // `donkey.kong@alura.com.br`// extrai donkey.kong // `bowser1@alura.com.br` //extrai bowser1 __
+__Find: `super.mario@caelum.com.br  //extrai super.mario // donkey.kong@alura.com.br// extrai donkey.kong // bowser1@alura.com.br //extrai bowser1`__
 Regex pattern:  `([a-z.]{5,15})\d?@(?:caelum.com.br|alura.com.br)$`
 
 __Find:  `toad@kart...com wario@kart@nintendo.com yoshi@nintendo daisy@nintendo.br ..@email.com`  __
