@@ -234,30 +234,150 @@ JAVASCRIPT
         </form>
     </body>
 
-**Ruby**
+Ruby
 
     regex = /(\d\d)(\w)/
-
     alvo = "11a22b33c"
-
     resultado = regex.match(alvo)
-
-
     > resultado.begin 0 #inicio do match inteiro 11a
-    0
-
     > resultado.begin 1 #inicio do grupo 11
-    0
-
     > resultado.end 0 #fim do match inteiro 11a
-    3
-
     > resultado.end 1 #fim do grupo 11
-    2
 
 
+    > regex = /(\d\d)(\w)/ #dois grupos
+    > alvo = "12a34b56c"
+    > resultados = alvo.scan regex
+    => [["12", "a"], ["34", "b"], ["56", "c"]]
 
+    cpfLimpo = "111.222.33396".gsub(/[.-]/,"")
+    puts cpfLimpo
+    11122233396
+
+    cpf = "111.222.333-96"
+    cpf.sub!(/[.-]/,"")
+    puts cpf
+    "111222.333-96"
 PHP
+
+    $string = '2007-12-31';
+    $regex = '~(\d{4})-(\d{2})-(\d{2})~';
+    $novoTexto = '$3-$2-$1';
+    $resultado =  preg_replace($regex, $novoTexto, $string);
+    echo $resultado;
+
+    $string = '31-12-2007';
+    $regex = '~-~';
+    $novoTexto = '/';
+    $resultado =  preg_replace($regex, $novoTexto, $string);
+    echo $resultado; // 31/12/2007
+
 PYTHON
+
+    >>> import re
+    >>> regex = re.compile(r'(\d\d)(\w)')
+    >>> alvo = '11a22b33c'
+     resultado = re.findall(regex, alvo)
+     >>> print resultado
+    [('11', 'a'), ('22', 'b'), ('33', 'c')]
+    >>> resultado[0]
+    ('11', 'a')
+    >>> resultado[1]
+    ('22', 'b')
+    >>> resultado[2]
+    ('33', 'c')
+    >>> for grupo in resultado:
+    ...     print grupo
+    ...
+    ('11', 'a')
+    ('22', 'b')
+    ('33', 'c')
+
+
+    >>> for grupo in resultado:
+    ...     print grupo[0] + grupo[1]
+    ...
+    11a
+    22b
+    33c
+
+    >>> import re
+    >>> regex = '\s-\s'
+    >>> novotexto = ': '
+    >>> alura = 'Alura - Regex'
+    >>> resultado = re.sub(regex, novotexto, alura)
+    >>> print resultado
+    Alura: Regex
+    alvo = '2007-12-31'
+    >>> import re
+    >>> regex = '-'
+    >>> novotexto = '/'
+    >>> alvo = '2007-12-31'
+    >>> resultado = re.sub(regex, novotexto, alvo)
+
+    >>> print resultado
+    2007/12/31
+
 C#
+2007-12-31 para 31/12/2007?
+
+    using System.Text.RegularExpressions;
+
+    namespace Rextester
+    {
+        public class Program
+        {
+            public static void Main(string[] args)
+            {
+               string alvo = "2007-12-31";
+               Regex regexp = new Regex(@"(\d{4})(-)(\d{2})(-)(\d{2})");
+
+                MatchCollection resultados = regexp.Matches(alvo);
+                foreach(Match resultado in resultados)
+                {
+
+                    string ano = resultado.Groups[1].Value;
+                    string mes = resultado.Groups[3].Value;
+                    string dia = resultado.Groups[5].Value;
+
+                    string separador1 = resultado.Groups[2].Value;
+                    string separador2 = resultado.Groups[4].Value;
+
+                    Console.WriteLine(string.Format("{0}{1}{2}{3}{4}", dia, separador1, mes, separador2, ano));
+                }
+            }
+        }
+    }
+
+"Alura".replaceAll("[Aa]", "*") //*lur*
+Como podemos fazer para trocar o separador - por /?
+
+    using System.Text.RegularExpressions;
+
+    namespace Rextester
+    {
+        public class Program
+        {
+            public static void Main(string[] args)
+            {
+               string alvo = "2007-12-31";
+               Regex regexp = new Regex(@"(\d{4})(-)(\d{2})(-)(\d{2})");
+
+                MatchCollection resultados = regexp.Matches(alvo);
+                foreach(Match resultado in resultados)
+                {
+
+                    string ano = resultado.Groups[1].Value;
+                    string mes = resultado.Groups[3].Value;
+                    string dia = resultado.Groups[5].Value;
+
+                    string separador1 = resultado.Groups[2].Value;
+                    string separador2 = resultado.Groups[4].Value;
+
+                    string novaData = string.Format("{0}{1}{2}{3}{4}", dia, separador1, mes, separador2, ano).Replace("-", "/");
+                    Console.WriteLine(novaData);
+                }
+            }
+        }
+    }
 Java
