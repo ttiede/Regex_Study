@@ -12,7 +12,7 @@ O símbolo + é um outro atalho para definir a quantidade e agora já conhecemos
 * ``` {n,}   // no mínimo n vezes. ```  
 * ``` {n,m}  //no mínimo n+1 vezes, no máximo m vezes.```
 
-##### ``` [ \t\r\n\f]```  onde:
+##### ``` [ \t\r\n\f]```  onde: ####
 
 O primeiro caractere é um espaço branco.
 Quantifiers como  ``` ?, +, * e {n}  ```.
@@ -266,5 +266,83 @@ console.log(resultado);
 
 console.log(exp.lastIndex);
 
+var anoMesDia = '2007-12-31';
+
+var exp = /-/g
+
+anoMesDia = anoMesDia.replace(exp, '/');
+
+var arquivo = '100,200-150,200;20';
+
+var valores = arquivo.split(',');
+
+var exp = /[,;\-]/;
+
+var valores = arquivo.split(exp);
+
+var codigos = 'A121B12112C12212F12G01';
+
+var exp = /[A-Za-z]\d+/g
+
+var codigosExtraidos = codigos.match(exp);
+
 </script>
 ```
+
+#### Html com pattern ####
+```
+<!doctype html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Testando pattern</title>
+
+</head>
+
+<body>
+
+    <form>
+
+        <input pattern="[0-9]*">
+
+        <input type="submit" value="Enviar dados">
+
+    </form>
+
+</body>
+```
+
+### Ruby ###
+```
+regex = /(\d\d)(\w)/
+
+alvo = "11a22b33c"
+
+resultado = regex.match(alvo)
+
+
+> resultado.begin 0 #inicio do match inteiro 11a
+0
+
+> resultado.begin 1 #inicio do grupo 11
+0
+
+> resultado.end 0 #fim do match inteiro 11a
+3
+
+> resultado.end 1 #fim do grupo 11
+2
+
+```
+
+### PHP ###
+
+
+### PYTHON ###
+
+
+### C# ###
+
+### Java ###
