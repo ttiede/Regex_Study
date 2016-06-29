@@ -143,11 +143,11 @@ __Descubra a msg por grupos__
 Regex pattern: `Z\d{1,}[0-9]?([A-Z])` , `Z\d+(\w)` e `[^Z\d]`
 
 
-__Find:  `super.mario@caelum.com.br  //extrai super.mario // donkey.kong@alura.com.br // extrai donkey.kong // bowser1@alura.com.br //extrai bowser1` __
+__Find:  `super.mario@caelum.com.br  //extrai super.mario // donkey.kong@alura.com.br // extrai donkey.kong // bowser1@alura.com.br //extrai bowser1`__
 Regex pattern:  `([a-z.]{5,15})\d?@(?:caelum.com.br|alura.com.br)$`
 
-__Find:  `toad@kart...com wario@kart@nintendo.com yoshi@nintendo daisy@nintendo.br ..@email.com`  __
-Regex pattern:`^([\w-]\.?)+@([\w-]+\.)+([A-Za-z]{2,4})+$`
+__Find:  `toad@kart...com wario@kart@nintendo.com yoshi@nintendo daisy@nintendo.br ..@email.com`__
+Regex pattern:`^([\w-]\.?)+@([\w-]+\.)+([A-Za-z]{2,4})+$``
 
 __Find:Nico Steppat|14/05/1977|Rua Buarque de Macedo|50|22222-222|Rio de Janeiro__
 	__Romulo Henrique|14/06/1993|Rua do Lins|120|12345-322|Rio de Janeiro__
