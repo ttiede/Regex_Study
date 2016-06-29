@@ -226,13 +226,13 @@ __Find__: ```<h2 class="text-lef">Expressões regulares </h2>```
 
 var alvo = '12a22b33c';
 
-var exp = new RegExp('(\d\d)(\w)', 'g');
-
+//var exp = new RegExp('(\\d\\d)(\\w)', 'g');
+var exp = /(\d\d)(\w)/g;
 // g padrão globalmente (varias vezes o partterns)
 
 // i independente sem ser sensitive case
 
-var resultado = exp.exec(textoTarget;)
+var resultado = exp.exec(alvo);
 
 console.log(resultado);
 
