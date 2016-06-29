@@ -32,10 +32,16 @@ Quantifiers como  ``` ?, +, * e {n}  ```.
 *  ```  \b // Existe a inversão do \b, **non-word-boundary**:\B` (B maiúsculo) .```
 *  ``` ^ //é uma âncora que selecione o início da string alvo.```
 *  ``` $ //é uma âncora que selecione o fim do alvo.```
-*  ```() // Declaramos um grupo com ().```
+*  ```? logo // após o quantifier, deixamos ele preguiçoso.```
+* ``` \n // referência ao grupo /\1```
+* ```() // Declaramos um grupo com ().```
 Podemos ter grupos e subgrupos.
 Um grupo é retornado na hora de executar, são úteis para selecionar uma parte do match.
 Através do  ```?:```, dizemos que não queremos ver esse grupo na resposta
+
+Quantifiers são gananciosos por padrão.
+Colocando ? logo após o quantifier, deixamos ele preguiçoso.
+Com \n podemos referenciar o texto de um grupo dentro da regex, onde n é o número do grupo .
 
 
 Declaramos um grupo com parênteses ( ).
@@ -178,6 +184,7 @@ __Descubra a msg por grupos__
    ```
    Z\d{1,}[0-9]?([A-Z])
    Z\d+(\w)
+   [^Z\d]
    ```
 
 __Find__:``` super.mario@caelum.com.br //extrai super.mario
@@ -201,4 +208,35 @@ Leonardo Cordeiro|01/01/1995|Rua de Campo Grande|01|00001-234|Rio de Janeiro```
 **Regex pattern:**:
 ```
 ([\w\s]+)\|(?:\d\d\/\d\d\/\d\d\d\d)\|([\w\s]+)\|(\d{1,4})\|(\d{5}-\d{3})\|(?:[\w\s]{10,})
+```
+
+__Find__: ```<h2 class="text-lef">Expressões regulares </h2>```
+
+**Regex pattern:**:```<(h2)[^>]+>.+</\1>```
+
+__Find__: ```<h2 class="text-lef">Expressões regulares </h2>```
+
+**Regex pattern:**:```<(h1|h2).+?>([\s\wçõ]+)</\1>>```
+
+
+### JAVASCRIPT ###
+
+```
+<script>
+
+var alvo = '12a22b33c';
+
+var exp = new RegExp('(\d\d)(\w)', 'g');
+
+// g padrão globalmente (varias vezes o partterns)
+
+// i independente sem ser sensitive case
+
+var resultado = exp.exec(textoTarget;)
+
+console.log(resultado);
+
+console.log(exp.lastIndex);
+
+</script>
 ```

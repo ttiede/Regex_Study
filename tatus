@@ -1,0 +1,71 @@
+[33mcommit 5a9876bcf99be498288340591636c1bea2e73188[m
+Author: Tiago Tiede <geschopf@gmail.com>
+Date:   Mon Jun 27 16:29:01 2016 -0300
+
+    Fixed style text to code markdown
+
+[33mcommit f62104e2c346170ef726d4003fe4158a7ea19283[m
+Author: Tiago Tiede <geschopf@gmail.com>
+Date:   Mon Jun 27 16:24:06 2016 -0300
+
+    Fixed style text
+
+[33mcommit b5731f73390d3dea8772a9c6218df63a2b91e479[m
+Author: Tiago Tiede <geschopf@gmail.com>
+Date:   Mon Jun 27 16:19:52 2016 -0300
+
+    groups in regex
+
+[33mcommit 615383b8c04ccf66dac0978d6a8ebb6c99558cc7[m
+Author: Tiago Tiede <geschopf@gmail.com>
+Date:   Mon Jun 27 11:17:44 2016 -0300
+
+    Fixed last regex using .*
+
+[33mcommit 78bf4e36e0a043bde4cf9c56483ea0adc2c98fd5[m
+Author: Tiago Tiede <geschopf@gmail.com>
+Date:   Mon Jun 27 11:14:30 2016 -0300
+
+    Using Anchors
+
+[33mcommit be1116877b48cf44c9a9c8c036c23f7340882875[m
+Author: Tiago Tiede <geschopf@gmail.com>
+Date:   Mon Jun 27 09:40:02 2016 -0300
+
+    Markdown using
+
+[33mcommit a03198e4b9dd1a9987ba1143a594ef0e652237be[m
+Author: Tiago Tiede <geschopf@gmail.com>
+Date:   Mon Jun 27 09:22:02 2016 -0300
+
+    Re-do Readme.md
+
+[33mcommit 826aba145cae3ecf3ec646df1046d34cf4dc245f[m
+Author: Tiago Tiede <geschopf@gmail.com>
+Date:   Sun Jun 26 21:12:29 2016 -0300
+
+    Alter to txt file
+
+[33mcommit 43f96ddeec9eb8d713bfe7f0f6da3ab5278b4c0a[m
+Author: Tiago Tiede <geschopf@MacBook-Pro-de-Tiago-Tiede.local>
+Date:   Sun Jun 26 20:56:31 2016 -0300
+
+    Chapter 2 * Qualifyer and samples of matches
+
+[33mcommit 2dae382aa892de4b87f76598d87164e0a3007b64[m
+Author: Tiago Tiede <geschopf@gmail.com>
+Date:   Sun Jun 26 15:47:48 2016 -0300
+
+    Sample of regex to specifics cases
+
+[33mcommit a1a448b4fc43cae8f5ac3f42b8404a9e47691f80[m
+Author: Tiago Tiede <geschopf@gmail.com>
+Date:   Sun Jun 26 15:29:51 2016 -0300
+
+    Regex project by alura
+
+[33mcommit cbf8ee3e67670ec2e406e9633bc28994f57adb70[m
+Author: Tiago Tiede <geschopf@gmail.com>
+Date:   Sun Jun 26 15:28:51 2016 -0300
+
+    first commit
