@@ -1,10 +1,5 @@
 ## Regex  Samples and Rules to review
 
-Caso precise usar ferramentas online para teste:
-
-http://regexr.com/
-https://regex101.com/
-
 Podemos definir facilmente a classe de qualquer caractere com o  [A-Z] .
 O símbolo + é um outro atalho para definir a quantidade e agora já conhecemos todos:
 
@@ -17,7 +12,7 @@ O símbolo + é um outro atalho para definir a quantidade e agora já conhecemos
 
 ----------
 
-    __\n INSERT [ \t\r\n\f] onde:__
+    \n INSERT [ \t\r\n\f] onde:
 
 O primeiro caractere é um espaço branco.
 Quantifiers como   `?, +, * e {n}`  .
@@ -29,24 +24,24 @@ Quantifiers como   `?, +, * e {n}`  .
 
 **Exemplo:**
 
->   `\s // significa whitespace e é um atalho para  [ \t\r\n\f]`
- >   `\w  //significa word char e é uma atalho para  [A-Za-z0-9_] .`
- >   `\t  // é um tab.`
- >   `\r  // é carriage return.`
- >   `\n  // é newline.`
- >   `\f  // é form feed.`
- >   `\w // classe de wordchar  [A-Za-z0-9_]`
- >   `\s  // classe de whitspaces  [ \t\r\n\f]`
- >    `[A-Z] // significa de A até Z, sempre maiúscula.`
- >    `[a-z] // significa de a até z, sempre minúscula.`
- >    `[A-Za-z] // significa A-Z ou a-z.`  
- >    `[abc] // significa a, b ou c.`  
- >    `\b // Âncora que seleciona um word boundary, isso é o início ou fim da palavra.`
->     `\b // Existe a inversão do \b, **non-word-boundary**:\B` (B maiúsculo) .
->     `^ //é uma âncora que selecione o início da string alvo.`
->     `$ //é uma âncora que selecione o fim do alvo.`
->   `? logo //após o quantifier, deixamos ele preguiçoso.`
->   `\n // referência ao () // Declaramos um grupo com ().`
+*    `\s // significa whitespace e é um atalho para  [ \t\r\n\f]`
+ *    `\w  //significa word char e é uma atalho para  [A-Za-z0-9_] .`
+ *    `\t  // é um tab.`
+ *    `\r  // é carriage return.`
+ *    `\n  // é newline.`
+ *    `\f  // é form feed.`
+ *    `\w // classe de wordchar  [A-Za-z0-9_]`
+ *    `\s  // classe de whitspaces  [ \t\r\n\f]`
+ *     `[A-Z] // significa de A até Z, sempre maiúscula.`
+ *     `[a-z] // significa de a até z, sempre minúscula.`
+ *     `[A-Za-z] // significa A-Z ou a-z.`  
+ *     `[abc] // significa a, b ou c.`  
+ *     `\b // Âncora que seleciona um word boundary, isso é o início ou fim da palavra.`
+ *       `\b // Existe a inversão do \b, **non-word-boundary**:\B` (B maiúsculo) .
+ *       `^ //é uma âncora que selecione o início da string alvo.`
+ *      `$ //é uma âncora que selecione o fim do alvo.`
+ *   `? logo //após o quantifier, deixamos ele preguiçoso.`
+ *   `\n // referência ao () // Declaramos um grupo com ().`
 
 Podemos ter grupos e subgrupos.
 Um grupo é retornado na hora de executar, são úteis para selecionar uma parte do match.
@@ -125,7 +120,7 @@ Regex pattern:  `^Caused by:.*`
 __Find: Data: 02/09/1964 ou Data:02/09/1964.__
 Regex pattern: `^Data:[\s]?[0-9]{2}\/[0-9]{2}\/[1-9]{4}$`
 
-__Find:  Página: meu-site.html  exercicio.html index.htmlx  https://cursos.alura.com.br/curso.html  __
+__Find:  `Página: meu-site.html  exercicio.html index.htmlx  https://cursos.alura.com.br/curso.html`__
 Regex pattern: .`*\.html$`
 
 
@@ -148,7 +143,7 @@ __Descubra a msg por grupos__
 Regex pattern: `Z\d{1,}[0-9]?([A-Z])` , `Z\d+(\w)` e `[^Z\d]`
 
 
-__Find: __ `super.mario@caelum.com.br`   __//extrai super.mario //__ `donkey.kong@alura.com.br` __// extrai donkey.kong //__ `bowser1@alura.com.br` __//extrai bowser1 __
+__Find:  `super.mario@caelum.com.br  //extrai super.mario // donkey.kong@alura.com.br // extrai donkey.kong // bowser1@alura.com.br //extrai bowser1` __
 Regex pattern:  `([a-z.]{5,15})\d?@(?:caelum.com.br|alura.com.br)$`
 
 __Find:  `toad@kart...com wario@kart@nintendo.com yoshi@nintendo daisy@nintendo.br ..@email.com`  __
