@@ -1,5 +1,10 @@
 ## Regex  Samples and Rules to review
 
+Caso precise usar ferramentas online para teste:
+
+http://regexr.com/
+https://regex101.com/
+
 Podemos definir facilmente a classe de qualquer caractere com o  [A-Z] .
 O símbolo + é um outro atalho para definir a quantidade e agora já conhecemos todos:
 
